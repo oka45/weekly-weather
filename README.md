@@ -20,4 +20,4 @@
 
 ## ドキュメント
 
-- [仕様書](./doc/specification.md)
+- [仕様書](./docs/specification.md)
