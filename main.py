@@ -40,10 +40,10 @@ if data is not None:
                 # 項目名
                 st.write("日付")
                 st.write("天気")
-                st.write("気温")
+                st.write("気温(最高/最低)")
             else:
                 dt = datetime.strptime(times_list[i - 1], "%Y-%m-%d")
-                st.write(dt.strftime("%m月%d年"))
+                st.write(dt.strftime("%m月%d日"))
                 st.write("☀️")
                 st.text(f"{temperature_max_list[i - 1]}\n{temperature_min_list[i - 1]}")
     data
