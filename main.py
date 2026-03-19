@@ -1,3 +1,5 @@
+from datetime import datetime
+
 import streamlit as st
 import requests
 
@@ -26,4 +28,22 @@ def get_weather_api():
 data = get_weather_api()
 
 if data is not None:
-    st.write(data)
+    times_list = data["daily"]["time"]
+    temperature_max_list = data["daily"]["temperature_2m_max"]
+    temperature_min_list = data["daily"]["temperature_2m_min"]
+
+    cols = st.columns(8)
+
+    for i, col in enumerate(cols):
+        with col:
+            if i == 0:
+                # 項目名
+                st.write("日付")
+                st.write("天気")
+                st.write("気温(最高/最低)")
+            else:
+                dt = datetime.strptime(times_list[i - 1], "%Y-%m-%d")
+                st.write(dt.strftime("%m月%d日"))
+                st.write("☀️")
+                st.text(f"{temperature_max_list[i - 1]}\n{temperature_min_list[i - 1]}")
+    data
