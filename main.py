@@ -1,7 +1,8 @@
 from datetime import datetime
 
-import streamlit as st
 import requests
+import streamlit as st
+
 
 def get_weather_api():
     """
@@ -9,7 +10,7 @@ def get_weather_api():
     Returns:
         dict or None: 正常に取得できた場合は dict、例外が発生した場合は None
     """
-    url = 'https://api.open-meteo.com/v1/forecast'
+    url = "https://api.open-meteo.com/v1/forecast"
     params = {
         "latitude": 35.6895,
         "longitude": 139.6917,
@@ -24,6 +25,7 @@ def get_weather_api():
         st.error("天気情報の取得に失敗")
         return None
     return response.json()
+
 
 data = get_weather_api()
 
