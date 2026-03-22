@@ -18,6 +18,14 @@
 - uv run streamlit run main.py
   - 後で環境構築の項目を作る
 
+## 静的解析
+- `uv run ruff check .`
+  - 問題を検出する
+- `uv run ruff check . --fix`
+  - 問題を検出しつつ、自動修正できるものは直す
+- `uv run ruff format .`
+  - コードの見た目を整える
+
 ## ドキュメント
 
 - [仕様書](./docs/specification.md)
