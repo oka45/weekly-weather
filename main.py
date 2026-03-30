@@ -5,7 +5,8 @@ import streamlit as st
 
 WEATHER_ICON_BY_CODES = {
     frozenset({0}): "☀️",
-    frozenset({1, 2, 3}): "⛅️",
+    frozenset({1, 2}): "⛅️",
+    frozenset({3}): "☁️",
     frozenset({45, 48}): "🌫️",
     frozenset({51, 53, 55, 56, 57}): "🌦️",
     frozenset({61, 63, 65, 66, 67, 80, 81, 82}): "☔️",
